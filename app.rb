@@ -9,6 +9,9 @@ set :database, "sqlite3:shop.db"
 class Client < ActiveRecord::Base
 end
 
+class Barber < ActiveRecord::Base
+end
+
 get '/' do
 	erb "Hello"			
 end

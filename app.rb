@@ -30,7 +30,9 @@ end
 
 post '/visit' do
 	c = Client.new params[:client]
-	c.save
-
-	erb "<h2>Thank you for appointment!</h2>"
+	if c.save
+		erb "<h2>Thank you for appointment!</h2>"
+	else
+		erb "<h2>You forgot type some field</h2>"
+	end
 end

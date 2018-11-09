@@ -25,18 +25,7 @@ get '/visit' do
 end
 
 post '/visit' do
-	@username = params[:username]
-	@phone = params[:phone]
-	@time = params[:time]
-	@barber = params[:barber]
-	@color = params[:color]
-
-	c = Client.new
-	c.name = @username
-	c.phone = @phone
-	c.datestamp = @time
-	c.barber = @barber
-	c.color = @color
+	c = Client.new params[:client]
 	c.save
 
 	erb "<h2>Thank you for appointment!</h2>"
